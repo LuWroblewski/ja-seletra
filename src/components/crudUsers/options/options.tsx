@@ -8,7 +8,7 @@ import { ImPencil } from 'react-icons/im';
 import { AiOutlineUserDelete } from 'react-icons/ai';
 import ModalView from '../modalView/modalview';
 import ModalDel from '../modalDel/modalDel';
-import ModalUpdate from '../modalUpdate/modalUpdate';
+import ModalFormUser from '../modalFormUser/ModalFormUser';
 
 interface Props {
   nome: string;
@@ -88,7 +88,7 @@ export default function Options({ nome, sobrenome, cargo, email, status, data_cr
         data_criacao={data_criacao}
         data_ultima_alteracao={data_ultima_alteracao}
       />
-      <ModalUpdate open={modalUpdate} />
+      <ModalFormUser open={modalUpdate} title={'Editar usuário'} />
       <ModalDel open={modalDel} />
     </div>
   );
