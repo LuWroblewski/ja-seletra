@@ -1,16 +1,28 @@
+interface TableProps {
+  firstName: string;
+  lastName: string;
+  password: string;
+  confirm_password: string;
+  role: string;
+  email: string;
+  status: string;
+  creation_date: string;
+  last_modification_date: string;
+}
+
 import Options from '../options/options';
 import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
 
 export default function Table() {
   return (
     <div className='justify-center w-11/12 ml-20 h-full  text-center text-black'>
-      <div className='overflow-x-auto h-auto'>
+      <div className='h-auto'>
         <table className='table table-zebra'>
           <thead>
             <tr>
-              <th>Nome</th>
-              <th>Sobrenome</th>
-              <th>Cargo</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Role</th>
               <th>Email</th>
               <th>Status</th>
               <th></th>
@@ -28,17 +40,17 @@ export default function Table() {
                      bg-red-400
                       w-2 h-2 rounded-full mr-2 mt-1'
                 ></div>
-                inativo
+                inactive
               </td>
               <td>
                 <Options
-                  nome={'Ricardo'}
-                  sobrenome={'Silva'}
-                  cargo={'colab'}
+                  firstName={'Ricardo'}
+                  lastName={'Silva'}
+                  role={'colab'}
                   email={'ricardo@example.com'}
-                  status={'inativo'}
-                  data_criacao={'15/02/2023'}
-                  data_ultima_alteracao={'07/03/2023'}
+                  status={'inactive'}
+                  creation_date={'15/02/2023'}
+                  last_modification_date={'07/03/2023'}
                 />
               </td>
             </tr>
@@ -54,17 +66,17 @@ export default function Table() {
                      bg-green-400
                       w-2 h-2 rounded-full mr-2 mt-1'
                 ></div>
-                ativo
+                active
               </td>
               <td>
                 <Options
-                  nome={'Camila'}
-                  sobrenome={'Costa'}
-                  cargo={'admin'}
+                  firstName={'Camila'}
+                  lastName={'Costa'}
+                  role={'admin'}
                   email={'camila@example.com'}
-                  status={'ativo'}
-                  data_criacao={'20/04/2023'}
-                  data_ultima_alteracao={'20/05/2023'}
+                  status={'active'}
+                  creation_date={'20/04/2023'}
+                  last_modification_date={'20/05/2023'}
                 />
               </td>
             </tr>
@@ -80,17 +92,17 @@ export default function Table() {
                      bg-red-400
                       w-2 h-2 rounded-full mr-2 mt-1'
                 ></div>
-                inativo
+                inactive
               </td>
               <td>
                 <Options
-                  nome={'Lucas'}
-                  sobrenome={'Souza'}
-                  cargo={'colab'}
+                  firstName={'Lucas'}
+                  lastName={'Souza'}
+                  role={'colab'}
                   email={'lucas@example.com'}
-                  status={'inativo'}
-                  data_criacao={'14/08/2023'}
-                  data_ultima_alteracao={'29/09/2023'}
+                  status={'inactive'}
+                  creation_date={'14/08/2023'}
+                  last_modification_date={'29/09/2023'}
                 />
               </td>
             </tr>
@@ -106,17 +118,17 @@ export default function Table() {
                      bg-green-400
                       w-2 h-2 rounded-full mr-2 mt-1'
                 ></div>
-                ativo
+                active
               </td>
               <td>
                 <Options
-                  nome={'Maria'}
-                  sobrenome={'Almeida'}
-                  cargo={'colab'}
+                  firstName={'Maria'}
+                  lastName={'Almeida'}
+                  role={'colab'}
                   email={'maria@example.com'}
-                  status={'ativo'}
-                  data_criacao={'02/07/2023'}
-                  data_ultima_alteracao={'14/08/2023'}
+                  status={'active'}
+                  creation_date={'02/07/2023'}
+                  last_modification_date={'14/08/2023'}
                 />
               </td>
             </tr>
@@ -132,17 +144,17 @@ export default function Table() {
                      bg-green-400
                       w-2 h-2 rounded-full mr-2 mt-1'
                 ></div>
-                ativo
+                active
               </td>
               <td>
                 <Options
-                  nome={'Fernanda'}
-                  sobrenome={'Santos'}
-                  cargo={'admin'}
+                  firstName={'Fernanda'}
+                  lastName={'Santos'}
+                  role={'admin'}
                   email={'fernanda@example.com'}
-                  status={'ativo'}
-                  data_criacao={'05/05/2023'}
-                  data_ultima_alteracao={'18/06/2023'}
+                  status={'active'}
+                  creation_date={'05/05/2023'}
+                  last_modification_date={'18/06/2023'}
                 />
               </td>
             </tr>
@@ -150,7 +162,7 @@ export default function Table() {
         </table>
       </div>
 
-      <div className=' bg-gray-100 w-full flex justify-center items-center space-x-3 py-1'>
+      <div className=' bg-gray-100 w-full flex justify-center items-center space-x-3 py-1 '>
         <p className='hover:text-gray-400'>
           <BiSolidLeftArrow />
         </p>

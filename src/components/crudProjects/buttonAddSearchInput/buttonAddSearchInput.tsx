@@ -19,14 +19,14 @@ export default function ButtonAddSearchInput() {
         </button>
         <input
           type='text'
-          placeholder='Pesquise usuário '
+          placeholder='Pesquise projeto '
           className='input input-bordered w-full max-w-xs ml-4 text-black '
         />
       </div>
       <div className='text-black text-left'>
         <ModalFormUser
           open={modal}
-          title={'Adicionar Usuário'}
+          title={'Adicionar Projeto'}
           firstName={''}
           lastName={''}
           password={''}

@@ -2,22 +2,24 @@ import { useEffect, useRef } from 'react';
 
 interface Props {
   open?: boolean;
-  firstName: string;
-  lastName: string;
-  role: string;
-  email: string;
-  status: string;
+  project: string;
+  equipmentNumber: string;
+  completionPercentage: string;
+  released: string;
+  signatureDate: string;
+  releaseSignature: string;
   creation_date: string;
   last_modification_date: string;
 }
 
 export default function ModalView({
   open,
-  firstName,
-  lastName,
-  role,
-  email,
-  status,
+  project,
+  equipmentNumber,
+  completionPercentage,
+  released,
+  signatureDate,
+  releaseSignature,
   creation_date,
   last_modification_date,
 }: Props) {
@@ -36,22 +38,24 @@ export default function ModalView({
   return (
     <dialog ref={modalRef} className='modal'>
       <div className='modal-box'>
-        <h3 className='font-bold text-lg'>
-          {firstName} {lastName}
-        </h3>
+        <h3 className='font-bold text-lg'>{project}</h3>
         <hr className='w-full border-gray-300 ' />
 
         <div className='flex'>
           <div className='flex-col text-left  my-2 ml-3'>
-            <small className='text-gray-400 tracking-wider'>Cargo</small>
-            <p className='text-left text-lg font-semibold mr-3'>{role}</p>
-            <small className='text-gray-400 tracking-wider'>Status</small>
-            <p className='text-left text-lg font-semibold mr-3'>{status}</p>
+            <small className='text-gray-400 tracking-wider'>Número do Equipamento</small>
+            <p className='text-left text-lg font-semibold mr-3'>{equipmentNumber}</p>
+            <small className='text-gray-400 tracking-wider'>Porcetagem de Conclusão</small>
+            <p className='text-left text-lg font-semibold mr-3'>{completionPercentage}</p>
+            <small className='text-gray-400 tracking-wider'>Assinatura Liberação</small>
+            <p className='text-left text-lg font-semibold '>{releaseSignature}</p>
+            <small className='text-gray-400 tracking-wider'>Data da Assinatura</small>
+            <p className='text-left text-lg font-semibold '>{signatureDate}</p>
           </div>
 
           <div className='flex-col text-left ml-auto mr-4'>
-            <small className='text-gray-400 tracking-wider'>Email</small>
-            <p className='text-left text-lg font-semibold '>{email}</p>
+            <small className='text-gray-400 tracking-wider'>Liberado?</small>
+            <p className='text-left text-lg font-semibold '>{released}</p>
             <small className='text-gray-400 tracking-wider'>Data de Criação</small>
             <p className='text-left text-lg font-semibold'>{creation_date}</p>
             <small className='text-gray-400 tracking-wider'>Data da Ultima Alteração</small>
