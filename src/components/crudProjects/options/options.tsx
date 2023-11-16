@@ -11,21 +11,23 @@ import ModalDel from '../modalDel/modalDel';
 import ModalFormUser from '../modalFormUser/ModalFormUser';
 
 interface Props {
-  firstName: string;
-  lastName: string;
-  role: string;
-  email: string;
-  status: string;
+  project: string;
+  equipmentNumber: string;
+  completionPercentage: string;
+  released: string;
+  signatureDate: string;
+  releaseSignature: string;
   creation_date: string;
   last_modification_date: string;
 }
 
 export default function Options({
-  firstName,
-  lastName,
-  role,
-  email,
-  status,
+  project,
+  equipmentNumber,
+  completionPercentage,
+  released,
+  signatureDate,
+  releaseSignature,
   creation_date,
   last_modification_date,
 }: Props) {
@@ -88,26 +90,23 @@ export default function Options({
       </div>
       <ModalView
         open={modalView}
-        firstName={firstName}
-        lastName={lastName}
-        role={role}
-        email={email}
-        status={status}
+        project={project}
+        equipmentNumber={equipmentNumber}
+        completionPercentage={completionPercentage}
+        released={released}
+        signatureDate={signatureDate}
+        releaseSignature={releaseSignature}
         creation_date={creation_date}
         last_modification_date={last_modification_date}
       />
       <ModalFormUser
         open={modalUpdate}
-        title={'Editar Usuário'}
-        firstName={firstName}
-        lastName={lastName}
-        password={''}
-        confirm_password={''}
-        role={role}
-        email={email}
-        status={status}
-        creation_date={creation_date}
-        last_modification_date={last_modification_date}
+        title={'Editar Projeto'}
+        project={project}
+        equipmentNumber={equipmentNumber}
+        released={released}
+        signatureDate={signatureDate}
+        releaseSignature={releaseSignature}
       />
       <ModalDel open={modalDel} />
     </div>

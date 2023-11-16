@@ -3,27 +3,21 @@ import { useEffect, useRef } from 'react';
 interface Props {
   open?: boolean;
   title?: string;
-  firstName: string;
-  lastName: string;
-  password: string;
-  confirm_password: string;
-  role: string;
-  email: string;
-  status: string;
-  creation_date: string;
-  last_modification_date: string;
+  project: string;
+  equipmentNumber: string;
+  released: string;
+  signatureDate: string;
+  releaseSignature: string;
 }
 
 export default function ModalFormUser({
   open,
   title,
-  firstName,
-  lastName,
-  password,
-  confirm_password,
-  role,
-  email,
-  status,
+  project,
+  equipmentNumber,
+  released,
+  signatureDate,
+  releaseSignature,
 }: Props) {
   const modalRef = useRef<HTMLDialogElement>(null);
 
@@ -49,71 +43,46 @@ export default function ModalFormUser({
             <input
               type='text'
               placeholder='Nome'
-              defaultValue={firstName || ''}
+              defaultValue={project || ''}
               className='input input-bordered w-full input-sm max-w-xs'
             />
           </div>
-
           <div className='flex flex-col my-2 '>
             <p className=' text-lg ml-3'>Sobrenome</p>
             <input
               type='text'
               placeholder='Sobrenome'
-              defaultValue={lastName || ''}
+              defaultValue={equipmentNumber || ''}
               className='input input-bordered w-full input-sm max-w-xs'
             />
           </div>
-
           <div className='flex flex-col my-2 '>
             <p className=' text-lg ml-3'>Email</p>
             <input
               type='text'
               placeholder='Email'
-              defaultValue={email || ''}
+              defaultValue={released || ''}
               className='input input-bordered w-full input-sm max-w-xs'
             />
           </div>
-
           <div className='flex flex-col my-2 '>
             <p className=' text-lg ml-3'>Cargo</p>
             <input
               type='text'
               placeholder='Cargo'
-              defaultValue={role || ''}
+              defaultValue={signatureDate || ''}
               className='input input-bordered w-full input-sm max-w-xs'
             />
           </div>
-
-          <div className='flex flex-col my-2 '>
-            <p className=' text-lg ml-3'>Cargo</p>
-            <select className='select select-sm select-bordered w-full max-w-xs' defaultValue={status || ''}>
-              <option disabled selected>
-                Status
-              </option>
-              <option>Ativo</option>
-              <option>Inativo</option>
-            </select>
-          </div>
-
           <div className='flex flex-col my-2 '>
             <p className=' text-lg ml-3'>Senha</p>
             <input
               type='password'
               placeholder='Senha'
-              defaultValue={password || ''}
+              defaultValue={releaseSignature || ''}
               className='input input-bordered w-full input-sm max-w-xs'
             />
-          </div>
-
-          <div className='flex flex-col my-2 '>
-            <p className=' text-lg ml-3'>Confirmação de senha</p>
-            <input
-              type='password'
-              defaultValue={confirm_password || ''}
-              placeholder='Confirmação de senha'
-              className='input input-bordered w-full input-sm max-w-xs'
-            />
-          </div>
+          </div>{' '}
         </div>
 
         <div className='flex justify-end'>

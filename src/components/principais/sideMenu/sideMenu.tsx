@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineHome } from 'react-icons/ai';
 import { HiOutlineClipboardList } from 'react-icons/hi';
-import { RiAdminLine } from 'react-icons/ri';
+import { RiAdminLine, RiHomeGearLine } from 'react-icons/ri';
 
 export default function SideMenu() {
   return (
@@ -53,6 +53,14 @@ export default function SideMenu() {
             <Link href='/checklistMontagem' className='hover:text-white'>
               <p>
                 <HiOutlineClipboardList />
+              </p>
+            </Link>
+          </li>
+
+          <li className='hover:bg-red-700 hover:rounded-md'>
+            <Link href='/painelProjeto' className='hover:text-white'>
+              <p>
+                <RiHomeGearLine />
               </p>
             </Link>
           </li>
@@ -131,6 +139,17 @@ export default function SideMenu() {
                   <HiOutlineClipboardList />
                 </p>
                 <p>Checklist Montagem </p>
+              </div>
+            </Link>
+          </li>
+
+          <li className='hover:bg-red-700 hover:rounded-md'>
+            <Link href='/painelProjeto' className='hover:text-white'>
+              <div className='flex items-center space-x-3 text-lg'>
+                <p>
+                  <RiHomeGearLine />
+                </p>
+                <p>Painel de Projetos </p>
               </div>
             </Link>
           </li>
