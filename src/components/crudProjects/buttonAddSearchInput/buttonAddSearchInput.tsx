@@ -27,15 +27,11 @@ export default function ButtonAddSearchInput() {
         <ModalFormUser
           open={modal}
           title={'Adicionar Projeto'}
-          firstName={''}
-          lastName={''}
-          password={''}
-          confirm_password={''}
-          role={''}
-          email={''}
-          status={''}
-          creation_date={''}
-          last_modification_date={''}
+          project={''}
+          equipmentNumber={''}
+          released={''}
+          signatureDate={''}
+          releaseSignature={''}
         />
       </div>
     </div>
