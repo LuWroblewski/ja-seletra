@@ -35,6 +35,7 @@ export default function Options({
   const [modalView, setModalView] = useState(false);
   const [modalUpdate, setModalUpdate] = useState(false);
   const [modalDel, setModalDel] = useState(false);
+  const isClickable = !signatureDate && !releaseSignature;
 
   const handleClick = () => {
     setMenu(!menu);
@@ -68,7 +69,12 @@ export default function Options({
               <p className='ml-2'>View</p>
             </div>
 
-            <div className='flex items-center text-left p-1 cursor-pointer hover:bg-gray-100' onClick={updateModal}>
+            <div
+              className={`flex items-center text-left p-1 cursor-pointer ${
+                isClickable ? 'hover:bg-gray-100' : 'pointer-events-none'
+              }`}
+              onClick={() => (isClickable ? updateModal : null)}
+            >
               <p>
                 <ImPencil />
               </p>
