@@ -20,9 +20,9 @@ export default function Home() {
             </div>
             <div className='form-control'>
               <label className='label'>
-                <span className='label-text'>Password</span>
+                <span className='label-text'>Senha</span>
               </label>
-              <input type='password' placeholder='password' className='input input-bordered text-black' required />
+              <input type='password' placeholder='senha' className='input input-bordered text-black' required />
             </div>
             <Link href='menu' className='hover:text-white'>
               <div className='form-control mt-6'>

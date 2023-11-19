@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineHome } from 'react-icons/ai';
-import { HiOutlineClipboardList } from 'react-icons/hi';
 import { RiAdminLine, RiHomeGearLine } from 'react-icons/ri';
 
 export default function SideMenu() {
@@ -21,38 +20,6 @@ export default function SideMenu() {
             <Link href='/menu' className='hover:text-white'>
               <p>
                 <AiOutlineHome />
-              </p>
-            </Link>
-          </li>
-
-          <li className='hover:bg-red-700 hover:rounded-md'>
-            <Link href='/checklistAGV' className='hover:text-white'>
-              <p>
-                <HiOutlineClipboardList />
-              </p>
-            </Link>
-          </li>
-
-          <li className='hover:bg-red-700 hover:rounded-md'>
-            <Link href='/checklistPeças' className='hover:text-white'>
-              <p>
-                <HiOutlineClipboardList />
-              </p>
-            </Link>
-          </li>
-
-          <li className='hover:bg-red-700 hover:rounded-md'>
-            <Link href='/checklistChassi' className='hover:text-white'>
-              <p>
-                <HiOutlineClipboardList />
-              </p>
-            </Link>
-          </li>
-
-          <li className='hover:bg-red-700 hover:rounded-md'>
-            <Link href='/checklistMontagem' className='hover:text-white'>
-              <p>
-                <HiOutlineClipboardList />
               </p>
             </Link>
           </li>
@@ -87,7 +54,6 @@ export default function SideMenu() {
               <p className='text-center hover:text-white text-xl'>nome do usuario</p>
             </li>
           </Link>
-
           <li className='hover:bg-red-700 hover:rounded-md '>
             <Link href='/menu' className='hover:text-white'>
               <div className='flex items-center space-x-3 text-lg'>
@@ -95,61 +61,6 @@ export default function SideMenu() {
                   <AiOutlineHome />
                 </p>
                 <p>Home </p>
-              </div>
-            </Link>
-          </li>
-
-          <li className='hover:bg-red-700 hover:rounded-md'>
-            <Link href='/checklistAGV' className='hover:text-white'>
-              <div className='flex items-center space-x-3 text-lg'>
-                <p>
-                  <HiOutlineClipboardList />
-                </p>
-                <p>Checklist AGV </p>
-              </div>
-            </Link>
-          </li>
-
-          <li className='hover:bg-red-700 hover:rounded-md'>
-            <Link href='/checklistPeças' className='hover:text-white'>
-              <div className='flex items-center space-x-3 text-lg'>
-                <p>
-                  <HiOutlineClipboardList />
-                </p>
-                <p>Checklist Peças Recebidas </p>
-              </div>
-            </Link>
-          </li>
-
-          <li className='hover:bg-red-700 hover:rounded-md'>
-            <Link href='/checklistChassi' className='hover:text-white'>
-              <div className='flex items-center space-x-3 text-lg'>
-                <p>
-                  <HiOutlineClipboardList />
-                </p>
-                <p>Checklist Chassi </p>
-              </div>
-            </Link>
-          </li>
-
-          <li className='hover:bg-red-700 hover:rounded-md'>
-            <Link href='/checklistMontagem' className='hover:text-white'>
-              <div className='flex items-center space-x-3 text-lg'>
-                <p>
-                  <HiOutlineClipboardList />
-                </p>
-                <p>Checklist Montagem </p>
-              </div>
-            </Link>
-          </li>
-
-          <li className='hover:bg-red-700 hover:rounded-md'>
-            <Link href='/painelProjeto' className='hover:text-white'>
-              <div className='flex items-center space-x-3 text-lg'>
-                <p>
-                  <RiHomeGearLine />
-                </p>
-                <p>Painel de Projetos </p>
               </div>
             </Link>
           </li>

@@ -39,50 +39,31 @@ export default function ModalFormUser({
 
         <div className='mt-2 '>
           <div className='flex flex-col my-2'>
-            <p className=' text-lg ml-3'>Nome</p>
+            <p className=' text-lg ml-3'>Projeto</p>
             <input
               type='text'
-              placeholder='Nome'
+              placeholder='Projeto'
               defaultValue={project || ''}
               className='input input-bordered w-full input-sm max-w-xs'
             />
           </div>
           <div className='flex flex-col my-2 '>
-            <p className=' text-lg ml-3'>Sobrenome</p>
+            <p className=' text-lg ml-3'>Número do equipamento</p>
             <input
               type='text'
-              placeholder='Sobrenome'
+              placeholder='Número de equipamento'
               defaultValue={equipmentNumber || ''}
               className='input input-bordered w-full input-sm max-w-xs'
             />
           </div>
           <div className='flex flex-col my-2 '>
-            <p className=' text-lg ml-3'>Email</p>
-            <input
-              type='text'
-              placeholder='Email'
-              defaultValue={released || ''}
-              className='input input-bordered w-full input-sm max-w-xs'
-            />
+            <p className=' text-lg ml-3'>Status</p>
+            <select className='select select-bordered w-full max-w-xs' value={released}>
+              <option hidden>Escolha o status da liberação</option>
+              <option value={'sim'}>Liberado</option>
+              <option value={'não'}>Não liberado</option>
+            </select>
           </div>
-          <div className='flex flex-col my-2 '>
-            <p className=' text-lg ml-3'>Cargo</p>
-            <input
-              type='text'
-              placeholder='Cargo'
-              defaultValue={signatureDate || ''}
-              className='input input-bordered w-full input-sm max-w-xs'
-            />
-          </div>
-          <div className='flex flex-col my-2 '>
-            <p className=' text-lg ml-3'>Senha</p>
-            <input
-              type='password'
-              placeholder='Senha'
-              defaultValue={releaseSignature || ''}
-              className='input input-bordered w-full input-sm max-w-xs'
-            />
-          </div>{' '}
         </div>
 
         <div className='flex justify-end'>
