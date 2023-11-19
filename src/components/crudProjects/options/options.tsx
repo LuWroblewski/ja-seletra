@@ -5,10 +5,10 @@ import { useState } from 'react';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
 import { IoEyeSharp } from 'react-icons/io5';
 import { ImPencil } from 'react-icons/im';
-import { AiOutlineUserDelete } from 'react-icons/ai';
+import { HiOutlineClipboardList } from 'react-icons/hi';
 import ModalView from '../modalView/modalview';
-import ModalDel from '../modalDel/modalDel';
 import ModalFormUser from '../modalFormUser/ModalFormUser';
+import Link from 'next/link';
 
 interface Props {
   project: string;
@@ -35,7 +35,6 @@ export default function Options({
   const [modalView, setModalView] = useState(false);
   const [modalUpdate, setModalUpdate] = useState(false);
   const [modalDel, setModalDel] = useState(false);
-  const isClickable = !signatureDate && !releaseSignature;
 
   const handleClick = () => {
     setMenu(!menu);
@@ -53,10 +52,6 @@ export default function Options({
     setModalUpdate(!modalUpdate);
   };
 
-  const delModal = () => {
-    setModalDel(!modalDel);
-  };
-
   return (
     <div>
       <div className='flex items-start'>
@@ -69,24 +64,42 @@ export default function Options({
               <p className='ml-2'>View</p>
             </div>
 
-            <div
-              className={`flex items-center text-left p-1 cursor-pointer ${
-                isClickable ? 'hover:bg-gray-100' : 'pointer-events-none'
-              }`}
-              onClick={() => (isClickable ? updateModal : null)}
-            >
+            <div className='flex items-center text-left p-1 cursor-pointer hover:bg-gray-100' onClick={updateModal}>
               <p>
                 <ImPencil />
               </p>
               <p className='ml-2'>Edit</p>
             </div>
 
-            <div className='flex items-center text-left p-1 cursor-pointer hover:bg-gray-100' onClick={delModal}>
+            <Link href='/checklistAGV' className='flex items-center text-left p-1 cursor-pointer hover:bg-gray-100'>
               <p>
-                <AiOutlineUserDelete />
+                <HiOutlineClipboardList />
               </p>
-              <p className='ml-2'>Delete</p>
-            </div>
+              <p className='ml-2'>Checklist AGV</p>
+            </Link>
+
+            <Link href='/checklistAGV' className='flex items-center text-left p-1 cursor-pointer hover:bg-gray-100'>
+              <p>
+                <HiOutlineClipboardList />
+              </p>
+              <p className='ml-2'>Checklist Chassi</p>
+            </Link>
+
+            <Link href='/checklistAGV' className='flex items-center text-left p-1 cursor-pointer hover:bg-gray-100'>
+              <p>
+                <HiOutlineClipboardList />
+              </p>
+              <p className='ml-2'>
+                Checklist <br /> Peças Recebidas
+              </p>
+            </Link>
+
+            <Link href='/checklistAGV' className='flex items-center text-left p-1 cursor-pointer hover:bg-gray-100'>
+              <p>
+                <HiOutlineClipboardList />
+              </p>
+              <p className='ml-2'>Checklist Montagem</p>
+            </Link>
           </div>
         )}
         <BiDotsVerticalRounded
@@ -114,7 +127,6 @@ export default function Options({
         signatureDate={signatureDate}
         releaseSignature={releaseSignature}
       />
-      <ModalDel open={modalDel} />
     </div>
   );
 }
