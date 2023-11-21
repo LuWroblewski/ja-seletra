@@ -27,7 +27,7 @@ export default function Table() {
                      bg-red-400
                       w-2 h-2 rounded-full mr-2 mt-1'
               ></div>
-              inactive
+              inativo
             </td>
             <td>
               <Options
@@ -35,7 +35,7 @@ export default function Table() {
                 lastName={'Silva'}
                 role={'colab'}
                 email={'ricardo@example.com'}
-                status={'inactive'}
+                status={'inativo'}
                 creation_date={'15/02/2023'}
                 last_modification_date={'07/03/2023'}
               />
@@ -53,7 +53,7 @@ export default function Table() {
                      bg-green-400
                       w-2 h-2 rounded-full mr-2 mt-1'
               ></div>
-              active
+              ativo
             </td>
             <td>
               <Options
@@ -61,7 +61,7 @@ export default function Table() {
                 lastName={'Costa'}
                 role={'admin'}
                 email={'camila@example.com'}
-                status={'active'}
+                status={'ativo'}
                 creation_date={'20/04/2023'}
                 last_modification_date={'20/05/2023'}
               />
@@ -79,7 +79,7 @@ export default function Table() {
                      bg-red-400
                       w-2 h-2 rounded-full mr-2 mt-1'
               ></div>
-              inactive
+              inativo
             </td>
             <td>
               <Options
@@ -87,7 +87,7 @@ export default function Table() {
                 lastName={'Souza'}
                 role={'colab'}
                 email={'lucas@example.com'}
-                status={'inactive'}
+                status={'inativo'}
                 creation_date={'14/08/2023'}
                 last_modification_date={'29/09/2023'}
               />
@@ -105,7 +105,7 @@ export default function Table() {
                      bg-green-400
                       w-2 h-2 rounded-full mr-2 mt-1'
               ></div>
-              active
+              ativo
             </td>
             <td>
               <Options
@@ -113,7 +113,7 @@ export default function Table() {
                 lastName={'Almeida'}
                 role={'colab'}
                 email={'maria@example.com'}
-                status={'active'}
+                status={'ativo'}
                 creation_date={'02/07/2023'}
                 last_modification_date={'14/08/2023'}
               />
@@ -131,7 +131,7 @@ export default function Table() {
                      bg-green-400
                       w-2 h-2 rounded-full mr-2 mt-1'
               ></div>
-              active
+              ativo
             </td>
             <td>
               <Options
@@ -139,7 +139,7 @@ export default function Table() {
                 lastName={'Santos'}
                 role={'admin'}
                 email={'fernanda@example.com'}
-                status={'active'}
+                status={'ativo'}
                 creation_date={'05/05/2023'}
                 last_modification_date={'18/06/2023'}
               />

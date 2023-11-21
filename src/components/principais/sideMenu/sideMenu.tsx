@@ -51,7 +51,7 @@ export default function SideMenu() {
               >
                 U
               </p>
-              <p className='text-center hover:text-white text-xl'>nome do usuario</p>
+              <p className='text-center hover:text-white text-xl'>José</p>
             </li>
           </Link>
           <li className='hover:bg-red-700 hover:rounded-md '>
@@ -64,7 +64,16 @@ export default function SideMenu() {
               </div>
             </Link>
           </li>
-
+          <li className='hover:bg-red-700 hover:rounded-md'>
+            <Link href='/painelGerenciamento' className='hover:text-white'>
+              <div className='flex items-center space-x-3 text-lg'>
+                <p>
+                  <RiHomeGearLine />
+                </p>
+                <p>Painel de Projetos </p>
+              </div>
+            </Link>
+          </li>
           <li className='hover:bg-red-700 hover:rounded-md'>
             <Link href='/painelGerenciamento' className='hover:text-white'>
               <div className='flex items-center space-x-3 text-lg'>
