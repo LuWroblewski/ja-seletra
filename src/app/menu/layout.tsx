@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en'>
       <body>
         <SideMenu />
-        <Title title='Bom dia nome do usuario' />
+        <Title title='Bom dia José' />
 
         {children}
       </body>

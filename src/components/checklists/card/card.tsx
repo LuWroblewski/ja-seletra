@@ -11,7 +11,7 @@ interface Scores {
   montagem: number;
   identificacao: number;
   aspecto: number;
-  [key: string]: number;
+  cartao: number;
 }
 
 interface RadioState {
@@ -20,6 +20,7 @@ interface RadioState {
   aspecto: 'success' | 'error' | 'warning';
   cartao: 'success' | 'error' | 'warning';
 }
+
 type Category = keyof RadioState;
 
 export default function Card({ title, result }: Props) {
@@ -32,21 +33,13 @@ export default function Card({ title, result }: Props) {
   });
 
   const handleRadioClick = (category: Category, value: number, radioType: 'success' | 'error' | 'warning') => {
-    if (radioState[category] !== radioType) {
-      setScores((prevScores) => {
-        const updatedScores: Scores = { ...prevScores, [category]: value };
-        return updatedScores;
-      });
-
-      setRadioState((prevRadioState) => ({
-        ...prevRadioState,
-        [category]: radioType,
-      }));
-    }
+    setScores((prevScores) => ({ ...prevScores, [category]: radioType === 'success' ? value : 0 }));
+    setRadioState((prevRadioState) => ({ ...prevRadioState, [category]: radioType }));
   };
 
   const totalScore = scores.montagem + scores.identificacao + scores.aspecto + scores.cartao;
   const isApproved = totalScore >= 100;
+  const isReproved = totalScore >= 0 || totalScore < 100;
 
   return (
     <div className='card w-full bg-base-100 shadow-xl'>
@@ -95,7 +88,7 @@ export default function Card({ title, result }: Props) {
                     type='radio'
                     name='radio-8-montagem'
                     className='radio radio-error'
-                    onClick={() => handleRadioClick('montagem', 0, 'error')}
+                    onClick={() => handleRadioClick('montagem', 1, 'error')}
                   />
                   <input
                     type='radio'
@@ -136,7 +129,7 @@ export default function Card({ title, result }: Props) {
                     type='radio'
                     name='radio-8-identificacao'
                     className='radio radio-error'
-                    onClick={() => handleRadioClick('identificacao', 0, 'error')}
+                    onClick={() => handleRadioClick('identificacao', 1, 'error')}
                   />
                   <input
                     type='radio'
@@ -177,7 +170,7 @@ export default function Card({ title, result }: Props) {
                     type='radio'
                     name='radio-8-aspecto'
                     className='radio radio-error'
-                    onClick={() => handleRadioClick('aspecto', 0, 'error')}
+                    onClick={() => handleRadioClick('aspecto', 1, 'error')}
                   />
                   <input
                     type='radio'
@@ -202,7 +195,7 @@ export default function Card({ title, result }: Props) {
               <td>
                 <div className='flex items-center gap-3'>
                   <div>
-                    <div className='font-bold'>Cartão de memoria no CLP</div>
+                    <div className='font-bold'>Cartão de memória no CLP</div>
                   </div>
                 </div>
               </td>
@@ -218,7 +211,7 @@ export default function Card({ title, result }: Props) {
                     type='radio'
                     name='radio-8-cartao'
                     className='radio radio-error'
-                    onClick={() => handleRadioClick('cartao', 0, 'error')}
+                    onClick={() => handleRadioClick('cartao', 1, 'error')}
                   />
                   <input
                     type='radio'
@@ -240,25 +233,22 @@ export default function Card({ title, result }: Props) {
             </tr>
           </tbody>
         </table>
+
         <div className='flex justify-end'>
           <div className=' space-y-2'>
             <h2 className='card-title p-4 bg-gray-200 tracking-wider font-bold w-48 ml-auto '>
-              Resultado: {scores.montagem + scores.identificacao + scores.aspecto + scores.cartao}
+              Resultado: {totalScore}
             </h2>
             {totalScore !== 0 ? (
               isApproved ? (
-                <h2
-                  className={`card-title p-1 bg-success tracking-wider font-bold w-48 ml-auto rounded-full justify-center`}
-                >
+                <h2 className='card-title p-1 bg-success tracking-wider font-bold w-48 ml-auto rounded-full justify-center'>
                   Aprovado!
                 </h2>
-              ) : (
-                <h2
-                  className={`card-title p-1 bg-error tracking-wider font-bold w-48 ml-auto rounded-full justify-center`}
-                >
+              ) : isReproved ? (
+                <h2 className='card-title p-1 bg-error tracking-wider font-bold w-48 ml-auto rounded-full justify-center'>
                   Reprovado!
                 </h2>
-              )
+              ) : null
             ) : null}
           </div>
           <button className='btn btn-outline btn-primary ml-2 mt-2'>

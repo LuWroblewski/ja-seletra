@@ -21,7 +21,9 @@ export default function Table() {
             <tr>
               <td>X</td>
               <td>1</td>
-              <td>25%</td>
+              <td>
+                <progress title='25%' className='progress progress-primary w-56' value='25' max='100'></progress>
+              </td>
               <td className='flex items-center'>
                 <div
                   className='
