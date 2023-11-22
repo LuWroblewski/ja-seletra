@@ -11,7 +11,10 @@ export default function Email() {
         <div className='card-body'>
           <h1 className='card-title text-2xl'>Checklist AGV</h1>
           <p>O checklist da sua área está pronto!</p>
-
+          <div className='flex space-x-5'>
+            <small className='stat-title text-danger'>Projeto: X </small>
+            <small className='stat-title text-danger'>Número do equipamento: 1 </small>
+          </div>
           <div className='stats stats-vertical shadow'>
             <div className='stat'>
               <div className='stat-value'>Aprovado: </div>
