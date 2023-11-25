@@ -33,7 +33,10 @@ export default function Card({ title, result }: Props) {
   });
 
   const handleRadioClick = (category: Category, value: number, radioType: 'success' | 'error' | 'warning') => {
-    setScores((prevScores) => ({ ...prevScores, [category]: radioType === 'success' ? value : 0 }));
+    setScores((prevScores) => ({
+      ...prevScores,
+      [category]: radioType === 'success' || radioType === 'warning' ? value : 0,
+    }));
     setRadioState((prevRadioState) => ({ ...prevRadioState, [category]: radioType }));
   };
 
@@ -235,13 +238,13 @@ export default function Card({ title, result }: Props) {
         </table>
 
         <div className='flex justify-end'>
-          <div className=' space-y-2'>
+          <div className=' space-y-2 '>
             <h2 className='card-title p-4 bg-gray-200 tracking-wider font-bold w-48 ml-auto '>
               Resultado: {totalScore}
             </h2>
             {totalScore !== 0 ? (
               isApproved ? (
-                <h2 className='card-title p-1 bg-success tracking-wider font-bold w-48 ml-auto rounded-full justify-center'>
+                <h2 className='card-title p-1 bg-success tracking-wider font-bold w-48 ml-auto rounded-full justify-center  '>
                   Aprovado!
                 </h2>
               ) : isReproved ? (
