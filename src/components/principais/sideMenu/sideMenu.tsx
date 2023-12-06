@@ -65,7 +65,7 @@ export default function SideMenu() {
             </Link>
           </li>
           <li className='hover:bg-red-700 hover:rounded-md'>
-            <Link href='/painelGerenciamento' className='hover:text-white'>
+            <Link href='/painelProjeto' className='hover:text-white'>
               <div className='flex items-center space-x-3 text-lg'>
                 <p>
                   <RiHomeGearLine />
